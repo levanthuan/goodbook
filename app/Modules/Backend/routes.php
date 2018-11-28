@@ -1,26 +1,14 @@
 <?php
 
-Route::group(['prefix'=>'admin', 'module'=>'Backend'], function(){
+Route::group([
+    'prefix'=>'admin',
+    'module'=>'Backend',
+    'namespace'=>'App\Modules\Backend\Controllers',
+    'middleware' => ['web']
+], function(){
+    Route::get('/login', 'AuthController@login')->name('admin.auth.login');
+    Route::post('/login', 'AuthController@authenticate')->name('admin.auth.authenticate');
+    Route::get('/logout', 'AuthController@logout')->name('admin.auth.logout');
 
-    Route::get('/test-user', function(){
-
-//        $user = new \App\Models\User();
-//
-//        $user->name = 'levanthuan';
-//        $user->email = 'levanthuankmhd@gmail.com';
-//        $user->password = bcrypt('123456');
-//        $user->name_display = 'le van thuan';
-//        $user->birthday = '2018-11-27';
-//        $user->address = 'Hai Duong';
-//        $user->phone_number = '928592523';
-//        $user->role = 0;
-//
-//        $user->save();
-
-        $list = \App\Models\User::all();
-
-        dd($list->toArray());
-
-    });
-
+    Route::get('/', 'IndexController@index')->name('admin.site.index');
 });
