@@ -1,4 +1,5 @@
-<?php   namespace App\Modules;
+<?php   
+namespace App\Modules;
 
 use Illuminate\Support\ServiceProvider;
 use Request;
