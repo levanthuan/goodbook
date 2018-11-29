@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>AppUI - Web App Bootstrap Admin Template</title>
+    <title>@yield('title') | GoodBook</title>
 
     <meta name="description" content="AppUI is a Web App Bootstrap Admin Template created by pixelcave and published on Themeforest">
     <meta name="author" content="pixelcave">
@@ -64,270 +64,17 @@
             <h3 class="text-primary visible-lt-ie10"><strong>Loading..</strong></h3>
         </div>
     </div>
-    <!-- END Preloader -->
-
-    <!-- Page Container -->
-    <!-- In the PHP version you can set the following options from inc/config file -->
-    <!--
-        Available #page-container classes:
-
-        'sidebar-light'                                 for a light main sidebar (You can add it along with any other class)
-
-        'sidebar-visible-lg-mini'                       main sidebar condensed - Mini Navigation (> 991px)
-        'sidebar-visible-lg-full'                       main sidebar full - Full Navigation (> 991px)
-
-        'sidebar-alt-visible-lg'                        alternative sidebar visible by default (> 991px) (You can add it along with any other class)
-
-        'header-fixed-top'                              has to be added only if the class 'navbar-fixed-top' was added on header.navbar
-        'header-fixed-bottom'                           has to be added only if the class 'navbar-fixed-bottom' was added on header.navbar
-
-        'fixed-width'                                   for a fixed width layout (can only be used with a static header/main sidebar layout)
-
-        'enable-cookies'                                enables cookies for remembering active color theme when changed from the sidebar links (You can add it along with any other class)
-    -->
     <div id="page-container" class="header-fixed-top sidebar-visible-lg-full">
         <!-- Alternative Sidebar -->
-        <div id="sidebar-alt" tabindex="-1" aria-hidden="true">
-            <!-- Toggle Alternative Sidebar Button (visible only in static layout) -->
-            <a href="javascript:void(0)" id="sidebar-alt-close" onclick="App.sidebar('toggle-sidebar-alt');"><i class="fa fa-times"></i></a>
-
-            <!-- Wrapper for scrolling functionality -->
-            <div id="sidebar-scroll-alt">
-                <!-- Sidebar Content -->
-                <div class="sidebar-content">
-                    <!-- Sidebar Section -->
-                    <div class="sidebar-section">
-                        <h2 class="text-light">Header</h2>
-                        <p>Section content..</p>
-                    </div>
-                    <!-- END Sidebar Section -->
-                </div>
-                <!-- END Sidebar Content -->
-            </div>
-            <!-- END Wrapper for scrolling functionality -->
-        </div>
+        @include('Backend::layouts.head_bar')
         <!-- END Alternative Sidebar -->
 
         <!-- Main Sidebar -->
-        <div id="sidebar">
-            <!-- Sidebar Brand -->
-            <div id="sidebar-brand" class="themed-background">
-                <a href="index.html" class="sidebar-title">
-                    <i class="fa fa-cube"></i> <span class="sidebar-nav-mini-hide">App<strong>UI</strong></span>
-                </a>
-            </div>
-            <!-- END Sidebar Brand -->
-
-            <!-- Wrapper for scrolling functionality -->
-            <div id="sidebar-scroll">
-                <!-- Sidebar Content -->
-                <div class="sidebar-content">
-                    <!-- Sidebar Navigation -->
-                    <ul class="sidebar-nav">
-                        <li>
-                            <a href="index.html" class="active"><i class="gi gi-compass sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Dashboard</span></a>
-                        </li>
-                        <li class="sidebar-separator">
-                            <i class="fa fa-ellipsis-h"></i>
-                        </li>
-                        <li>
-                            <a href="#" class="sidebar-nav-menu"><i class="fa fa-chevron-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="fa fa-cog sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Dropdown</span></a>
-                            <ul>
-                                <li>
-                                    <a href="javascript:void(0)">Link #1</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Link #2</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <!-- END Sidebar Navigation -->
-
-                    <!-- Color Themes -->
-                    <!-- Preview a theme on a page functionality can be found in js/app.js - colorThemePreview() -->
-                    <div class="sidebar-section sidebar-nav-mini-hide">
-                        <div class="sidebar-separator push">
-                            <i class="fa fa-ellipsis-h"></i>
-                        </div>
-                        <ul class="sidebar-themes clearfix">
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-default" data-toggle="tooltip" title="Default" data-theme="default" data-theme-navbar="navbar-inverse" data-theme-sidebar="">
-                                    <span class="section-side themed-background-dark-default"></span>
-                                    <span class="section-content"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-classy" data-toggle="tooltip" title="Classy" data-theme="css/themes/classy.css" data-theme-navbar="navbar-inverse" data-theme-sidebar="">
-                                    <span class="section-side themed-background-dark-classy"></span>
-                                    <span class="section-content"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-social" data-toggle="tooltip" title="Social" data-theme="css/themes/social.css" data-theme-navbar="navbar-inverse" data-theme-sidebar="">
-                                    <span class="section-side themed-background-dark-social"></span>
-                                    <span class="section-content"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-flat" data-toggle="tooltip" title="Flat" data-theme="css/themes/flat.css" data-theme-navbar="navbar-inverse" data-theme-sidebar="">
-                                    <span class="section-side themed-background-dark-flat"></span>
-                                    <span class="section-content"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-amethyst" data-toggle="tooltip" title="Amethyst" data-theme="css/themes/amethyst.css" data-theme-navbar="navbar-inverse" data-theme-sidebar="">
-                                    <span class="section-side themed-background-dark-amethyst"></span>
-                                    <span class="section-content"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-creme" data-toggle="tooltip" title="Creme" data-theme="css/themes/creme.css" data-theme-navbar="navbar-inverse" data-theme-sidebar="">
-                                    <span class="section-side themed-background-dark-creme"></span>
-                                    <span class="section-content"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-passion" data-toggle="tooltip" title="Passion" data-theme="css/themes/passion.css" data-theme-navbar="navbar-inverse" data-theme-sidebar="">
-                                    <span class="section-side themed-background-dark-passion"></span>
-                                    <span class="section-content"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-default" data-toggle="tooltip" title="Default + Light Sidebar" data-theme="default" data-theme-navbar="navbar-inverse" data-theme-sidebar="sidebar-light">
-                                    <span class="section-side"></span>
-                                    <span class="section-content"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-classy" data-toggle="tooltip" title="Classy + Light Sidebar" data-theme="css/themes/classy.css" data-theme-navbar="navbar-inverse" data-theme-sidebar="sidebar-light">
-                                    <span class="section-side"></span>
-                                    <span class="section-content"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-social" data-toggle="tooltip" title="Social + Light Sidebar" data-theme="css/themes/social.css" data-theme-navbar="navbar-inverse" data-theme-sidebar="sidebar-light">
-                                    <span class="section-side"></span>
-                                    <span class="section-content"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-flat" data-toggle="tooltip" title="Flat + Light Sidebar" data-theme="css/themes/flat.css" data-theme-navbar="navbar-inverse" data-theme-sidebar="sidebar-light">
-                                    <span class="section-side"></span>
-                                    <span class="section-content"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-amethyst" data-toggle="tooltip" title="Amethyst + Light Sidebar" data-theme="css/themes/amethyst.css" data-theme-navbar="navbar-inverse" data-theme-sidebar="sidebar-light">
-                                    <span class="section-side"></span>
-                                    <span class="section-content"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-creme" data-toggle="tooltip" title="Creme + Light Sidebar" data-theme="css/themes/creme.css" data-theme-navbar="navbar-inverse" data-theme-sidebar="sidebar-light">
-                                    <span class="section-side"></span>
-                                    <span class="section-content"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-passion" data-toggle="tooltip" title="Passion + Light Sidebar" data-theme="css/themes/passion.css" data-theme-navbar="navbar-inverse" data-theme-sidebar="sidebar-light">
-                                    <span class="section-side"></span>
-                                    <span class="section-content"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-default" data-toggle="tooltip" title="Default + Light Header" data-theme="default" data-theme-navbar="navbar-default" data-theme-sidebar="">
-                                    <span class="section-header"></span>
-                                    <span class="section-side themed-background-dark-default"></span>
-                                    <span class="section-content"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-classy" data-toggle="tooltip" title="Classy + Light Header" data-theme="css/themes/classy.css" data-theme-navbar="navbar-default" data-theme-sidebar="">
-                                    <span class="section-header"></span>
-                                    <span class="section-side themed-background-dark-classy"></span>
-                                    <span class="section-content"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-social" data-toggle="tooltip" title="Social + Light Header" data-theme="css/themes/social.css" data-theme-navbar="navbar-default" data-theme-sidebar="">
-                                    <span class="section-header"></span>
-                                    <span class="section-side themed-background-dark-social"></span>
-                                    <span class="section-content"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-flat" data-toggle="tooltip" title="Flat + Light Header" data-theme="css/themes/flat.css" data-theme-navbar="navbar-default" data-theme-sidebar="">
-                                    <span class="section-header"></span>
-                                    <span class="section-side themed-background-dark-flat"></span>
-                                    <span class="section-content"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-amethyst" data-toggle="tooltip" title="Amethyst + Light Header" data-theme="css/themes/amethyst.css" data-theme-navbar="navbar-default" data-theme-sidebar="">
-                                    <span class="section-header"></span>
-                                    <span class="section-side themed-background-dark-amethyst"></span>
-                                    <span class="section-content"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-creme" data-toggle="tooltip" title="Creme + Light Header" data-theme="css/themes/creme.css" data-theme-navbar="navbar-default" data-theme-sidebar="">
-                                    <span class="section-header"></span>
-                                    <span class="section-side themed-background-dark-creme"></span>
-                                    <span class="section-content"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-passion" data-toggle="tooltip" title="Passion + Light Header" data-theme="css/themes/passion.css" data-theme-navbar="navbar-default" data-theme-sidebar="">
-                                    <span class="section-header"></span>
-                                    <span class="section-side themed-background-dark-passion"></span>
-                                    <span class="section-content"></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- END Color Themes -->
-                </div>
-                <!-- END Sidebar Content -->
-            </div>
-            <!-- END Wrapper for scrolling functionality -->
-
-            <!-- Sidebar Extra Info -->
-            <div id="sidebar-extra-info" class="sidebar-content sidebar-nav-mini-hide">
-                <div class="push-bit">
-                            <span class="pull-right">
-                                <a href="javascript:void(0)" class="text-muted"><i class="fa fa-plus"></i></a>
-                            </span>
-                    <small><strong>78 GB</strong> / 100 GB</small>
-                </div>
-                <div class="progress progress-mini push-bit">
-                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" style="width: 78%"></div>
-                </div>
-                <div class="text-center">
-                    <small>Crafted with <i class="fa fa-heart text-danger"></i> by <a href="http://goo.gl/vNS3I" target="_blank">pixelcave</a></small><br>
-                    <small><span id="year-copy"></span> &copy; <a href="http://goo.gl/RcsdAh" target="_blank">AppUI</a></small>
-                </div>
-            </div>
-            <!-- END Sidebar Extra Info -->
-        </div>
+        @include('Backend::layouts.main_side_bar')
         <!-- END Main Sidebar -->
 
         <!-- Main Container -->
         <div id="main-container">
-            <!-- Header -->
-            <!-- In the PHP version you can set the following options from inc/config file -->
-            <!--
-                Available header.navbar classes:
-
-                'navbar-default'            for the default light header
-                'navbar-inverse'            for an alternative dark header
-
-                'navbar-fixed-top'          for a top fixed header (fixed main sidebar with scroll will be auto initialized, functionality can be found in js/app.js - handleSidebar())
-                    'header-fixed-top'      has to be added on #page-container only if the class 'navbar-fixed-top' was added
-
-                'navbar-fixed-bottom'       for a bottom fixed header (fixed main sidebar with scroll will be auto initialized, functionality can be found in js/app.js - handleSidebar()))
-                    'header-fixed-bottom'   has to be added on #page-container only if the class 'navbar-fixed-bottom' was added
-            -->
             <header class="navbar navbar-inverse navbar-fixed-top">
                 <!-- Left Header Navigation -->
                 <ul class="nav navbar-nav-custom">
@@ -367,47 +114,7 @@
                     <!-- END Alternative Sidebar Toggle Button -->
 
                     <!-- User Dropdown -->
-                    <li class="dropdown">
-                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="{{ URL::asset('assets/backend/img/placeholders/avatars/avatar.jpg') }}" alt="avatar">
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li class="dropdown-header">
-                                <strong>ADMINISTRATOR</strong>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">
-                                    <i class="fa fa-inbox fa-fw pull-right"></i>
-                                    Link #1
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">
-                                    <i class="fa fa-pencil-square fa-fw pull-right"></i>
-                                    Link #2
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">
-                                    <i class="fa fa-picture-o fa-fw pull-right"></i>
-                                    Link #3
-                                </a>
-                            </li>
-                            <li class="divider"><li>
-                            <li>
-                                <a href="javascript:void(0)">
-                                    <i class="gi gi-settings fa-fw pull-right"></i>
-                                    Link #1
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('admin.auth.logout') }}">
-                                    <i class="fa fa fa-sign-out fa-fw pull-right"></i>
-                                    Logout
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                    @include('Backend::layouts.pull_right')
                     <!-- END User Dropdown -->
                 </ul>
                 <!-- END Right Header Navigation -->
@@ -416,68 +123,7 @@
 
             <!-- Page content -->
             <div id="page-content">
-                <!-- Page Header -->
-                <div class="content-header">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="header-section">
-                                <h1>Page Title</h1>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 hidden-xs">
-                            <div class="header-section">
-                                <ul class="breadcrumb breadcrumb-top">
-                                    <li>Category</li>
-                                    <li><a href="">Page</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END Page Header -->
-
-                <!-- Example Block -->
-                <div class="block">
-                    <!-- Example Title -->
-                    <div class="block-title">
-                        <div class="block-options pull-right">
-                            <a href="javascript:void(0)" class="btn btn-effect-ripple btn-default" data-toggle="tooltip" title="Settings"><i class="fa fa-cog"></i></a>
-                            <div class="btn-group">
-                                <a href="javascript:void(0)" class="btn btn-effect-ripple btn-default dropdown-toggle enable-tooltip" data-toggle="dropdown" title="Options">
-                                    <i class="fa fa-chevron-down"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                    <li>
-                                        <a href="javascript:void(0)">
-                                            <i class="fa fa-pencil pull-right"></i>
-                                            Edit
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">
-                                            <i class="fa fa-refresh pull-right"></i>
-                                            Update
-                                        </a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <a href="javascript:void(0)">
-                                            <i class="fa fa-trash-o fa-fw pull-right"></i>
-                                            Delete
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <h2>Block</h2>
-                    </div>
-                    <!-- END Example Title -->
-
-                    <!-- Example Content -->
-                    <p>...</p>
-                    <!-- END Example Content -->
-                </div>
-                <!-- END Example Block -->
+                @yield('content')
             </div>
             <!-- END Page Content -->
         </div>
