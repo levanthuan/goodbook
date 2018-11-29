@@ -564,6 +564,9 @@ a.sidebar-title:focus {
     color: #454e59;
     border-right: 4px solid #5ccdde;
 }
+.sidebar-nav a.sidebar-active {
+    color: #ffffff;
+}
 
 .sidebar-nav a > .sidebar-nav-icon {
     margin-right: 10px;
