@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>@yield('title') | GoodBook</title>
+    <title>@yield('title') | GoodBOOK</title>
 
     <meta name="description" content="AppUI is a Web App Bootstrap Admin Template created by pixelcave and published on Themeforest">
     <meta name="author" content="pixelcave">
